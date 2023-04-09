@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.1859903381642512" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.rosul.rsemployeemanagment.gui.MainInterface">
+   <items>
+      <VBox alignment="CENTER" prefHeight="398.0" prefWidth="140.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnShowExpiredProducts" mnemonicParsing="false" onAction="#showExpiredProducts" prefHeight="29.0" prefWidth="144.0" text="Show Expired Products">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#getInit" prefHeight="25.0" prefWidth="146.0" text="Reset">
+               <VBox.margin>
+                  <Insets bottom="100.0" />
+               </VBox.margin>
+            </Button>
+            <Label text="Sorting">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="sortByName" mnemonicParsing="false" onAction="#sortProducts" prefHeight="25.0" prefWidth="135.0" text="by Name" />
+            <Button fx:id="sortByPrice" mnemonicParsing="false" onAction="#sortProducts" prefHeight="25.0" prefWidth="135.0" text="by Price" />
+            <Button fx:id="sortByExpire" layoutX="20.0" layoutY="349.0" mnemonicParsing="false" onAction="#sortProducts" prefHeight="25.0" prefWidth="135.0" text="by Expire Date" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="507.0" prefWidth="683.0">
+         <children>
+            <Label text="Product Management">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="428.0">
+               <children>
+                  <TextField fx:id="searchBar" onKeyTyped="#searchName" prefHeight="25.0" prefWidth="596.0" promptText="Write Product Name to Search">
+                     <HBox.margin>
+                        <Insets top="30.0" />
+                     </HBox.margin></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Name">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="34.0" text="Weight" />
+                  <Label layoutX="88.0" layoutY="34.0" text="Buy Price(€)" />
+                  <Label layoutX="88.0" layoutY="34.0" text="Quantity" />
+                  <Label layoutX="88.0" layoutY="34.0" text="Tax" />
+                  <Label layoutX="146.0" layoutY="34.0" text="Shipping Price(€)" />
+                  <Label layoutX="88.0" layoutY="34.0" text="Sell Price(€)" />
+                  <Label layoutX="88.0" layoutY="34.0" prefHeight="17.0" prefWidth="64.0" text="Expire Date" />
+                  <Label layoutX="88.0" layoutY="34.0" text="Validity" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <ListView fx:id="productListView" prefHeight="309.0" prefWidth="518.0" />
+            <Button mnemonicParsing="false" onAction="#switchToDetailInterfaceForNewProduct" prefHeight="25.0" prefWidth="283.0" text="Take up">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>
